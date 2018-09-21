@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Sample API.
+  description: Bookmark API's for basic bookmark operations for Sharvan Bhatt Personal web.
+  version: 1.0.0
+servers: 
+  - url: https://bhatt121.com/api-pub/
+    description: Production version of API for Bookmark
+  - url: https://bhatt121.com/api
+    description: Dev/Stagging version of API for Bookmark opertions
+tags:
+  - name: Bookmark-API
+paths:
+  /bookmarks/{type}/:
+    get:
+      tags: 
+        - Bookmark-API
+      summary: Get all Bookmarks of specific type
+      description: It will return all bookmarks of specific types.
+      parameters: 
+        - name: type
+          in: path
+          required: true
+          description: Bookmark type currently support youtube/web
+          schema:
+            type: string
+      responses:
+        '200':
+          description: JSON Array of Bookmarks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          description: Bookmark type not supported
