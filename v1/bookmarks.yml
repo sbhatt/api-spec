@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Bookmark API.
-  description: Bookmark API's for basic bookmark operations for Sharvan Bhatt Personal web.
+  description: Bookmark API's for basic bookmark operations for Sharvan Bhatt Personal web, currently consumed in bhatt121.com.
   version: 1.0.0
 servers:
   - url: https://bhatt121.com/api-pub/

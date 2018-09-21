@@ -1,9 +1,9 @@
 openapi: 3.0.0
 info:
   title: Sample API.
-  description: Bookmark API's for basic bookmark operations for Sharvan Bhatt Personal web.
+  description: Bookmark API's for basic bookmark operations for Sharvan Bhatt Personal web, currently consumed in bhatt121.com.
   version: 1.0.0
-servers: 
+servers:
   - url: https://bhatt121.com/api-pub/
     description: Production version of API for Bookmark
   - url: https://bhatt121.com/api
@@ -13,11 +13,11 @@ tags:
 paths:
   /bookmarks/{type}/:
     get:
-      tags: 
+      tags:
         - Bookmark-API
       summary: Get all Bookmarks of specific type
       description: It will return all bookmarks of specific types.
-      parameters: 
+      parameters:
         - name: type
           in: path
           required: true
