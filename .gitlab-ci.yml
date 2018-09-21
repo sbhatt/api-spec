@@ -1,0 +1,17 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: swaggerapi/swagger-codegen-cli:latest
+  script:
+    - ls
+  artifacts:
+    paths:
+      - api-spec
+
+deploy:
+  stage: deploy
+  script:
+   - ls
