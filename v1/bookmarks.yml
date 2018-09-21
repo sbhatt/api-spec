@@ -4,7 +4,7 @@ info:
   description: Bookmark API's for basic bookmark operations for Sharvan Bhatt Personal web, currently consumed in bhatt121.com.
   version: 1.0.0
 servers:
-  - url: https://bhatt121.com/api-pub/
+  - url: https://bhatt121.com/api-prd/v1
     description: Production version of API for Bookmark
   - url: https://bhatt121.com/api
     description: Dev/Stagging version of API for Bookmark opertions
