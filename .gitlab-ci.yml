@@ -16,7 +16,7 @@ build:
     - ls -ltr
     - chmod 777 swagger-codegen-cli-3.0.0-rc1.jar
     - ls -ltr
-    - java -jar swagger-codegen-cli-3.0.0-rc1.jar -i /builds/mickybhatt/api-spec/v1/bookmarks.yaml -l html -o api-doc/bookmark/v1
+    - java -jar swagger-codegen-cli-3.0.0-rc1.jar generate -i /builds/mickybhatt/api-spec/v1/bookmarks.yaml -l html -o api-doc/bookmark/v1
     - ls
   artifacts:
     paths:
