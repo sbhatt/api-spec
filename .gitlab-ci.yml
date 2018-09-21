@@ -13,6 +13,9 @@ build:
     - ls
     - swaggerJar="swagger-codegen-cli-2.3.1.jar"
     - wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
+    - ls -ltr
+    - chmod 777 swagger-codegen-cli-2.3.1.jar
+    - ls -ltr
     - java -jar swagger-codegen-cli.jar -i http://petstore.swagger.io/v2/swagger.json -l html -o api-spec-doc/bookmark
     - ls
   artifacts:
