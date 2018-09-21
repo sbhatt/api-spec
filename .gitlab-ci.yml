@@ -9,18 +9,18 @@ build:
     paths:
      - swagger-codegen-cli-2.3.1.jar
   script:
-	- pwd
-	- ls
-	- swaggerJar="swagger-codegen-cli-2.3.1.jar"
-	- if [ -f "$file" ]
-	- then
-	- 	echo "$file found."
-	- else
-	-	echo "$file not found."	
-    - 	wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
-	- fi
-	- java -jar swagger-codegen-cli.jar -i http://petstore.swagger.io/v2/swagger.json -l html -o api-spec-doc/bookmark
-	- ls
+    - pwd
+    - ls
+    - swaggerJar="swagger-codegen-cli-2.3.1.jar"
+    - if [ -f "$file" ]
+    - then
+    -  echo "$file found."
+    - else
+    -..echo "$file not found."	
+    - .wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
+    - fi
+    - java -jar swagger-codegen-cli.jar -i http://petstore.swagger.io/v2/swagger.json -l html -o api-spec-doc/bookmark
+    - ls
   artifacts:
     paths:
       - api-spec
@@ -30,4 +30,5 @@ deploy:
   script:
    - ls
 
+   
    
