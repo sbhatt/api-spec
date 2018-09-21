@@ -11,21 +11,37 @@ build:
   script:
     - pwd
     - ls
-    - swaggerJar="swagger-codegen-cli-2.3.1.jar"
-    - wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
+    - swaggerJar="swagger-codegen-cli-3.0.0-rc1.jar"
+    - wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/3.0.0-rc1/swagger-codegen-cli-3.0.0-rc1.jar
     - ls -ltr
-    - chmod 777 swagger-codegen-cli-2.3.1.jar
+    - chmod 777 swagger-codegen-cli-3.0.0-rc1.jar
     - ls -ltr
-    - java -jar swagger-codegen-cli-2.3.1.jar -i http://petstore.swagger.io/v2/swagger.json -l html -o api-spec-doc/bookmark
+    - java -jar swagger-codegen-cli-3.0.0-rc1.jar -i /builds/mickybhatt/api-spec/v1/bookmarks.yaml -l html -o api-doc/bookmark/v1
     - ls
   artifacts:
     paths:
-      - api-spec
-
+      - api-doc/bookmark
 deploy:
   stage: deploy
   script:
    - ls
+   - mkdir .deploy
+   - cd .deploy
+   - git config --global user.email "sharvan.bhatt@gmail.com"
+   - git config --global user.name "Sharvan Bhatt"
+   - git clone https://github.com/sbhatt/api-doc.git
+   - cd api-doc
+   - git rm -r -f *
+   - cd ..
+   - cd ..
+   - cp -r api-doc/* .deploy/api-doc
+   - cd .deploy/api-doc/
+   - git status
+   - git add -A
+   - git commit -m "New Site Verion" *
+   - git status
+   - git push https://sbhatt:$GITHUB_DEV_KEY@github.com/sbhatt/api-doc.git master
+   - git status
 
    
    
